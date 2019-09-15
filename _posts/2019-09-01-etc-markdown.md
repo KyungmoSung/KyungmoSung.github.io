@@ -36,20 +36,20 @@ Github에서 Repository를 만들어보신 분 이라면 한번쯤 README.md 파
 ---
 `<H1>` 부터 `<H6>` 까지 표현 가능
 ```
-    Header <H1>
-    ===========
+Header <H1>
+===========
 ```
 ```
-    Header <H2>
-    -----------
+Header <H2>
+-----------
 ```
 ```
-    # Header <H1>
-    ## Header <H2> 
-    ### Header <H3>
-    #### Header <H4>
-    ##### Header <H5>
-    ###### Header <H6>
+# Header <H1>
+## Header <H2> 
+### Header <H3>
+#### Header <H4>
+##### Header <H5>
+###### Header <H6>
 ```
 
 # Header <H1>
@@ -63,13 +63,14 @@ Github에서 Repository를 만들어보신 분 이라면 한번쯤 README.md 파
 ### 강조(Emphasis)
 ---
 ```
-    *이탤릭체(single asterisks)*
-    _이탤릭체(single underscores)_
-    **볼드체(double asterisks)**
-    __볼드체(double underscores)__
-    <u>밑줄(underline)</u>
-    ~~취소선(tilde)~~
+*이탤릭체(single asterisks)*
+_이탤릭체(single underscores)_
+**볼드체(double asterisks)**
+__볼드체(double underscores)__
+<u>밑줄(underline)</u>
+~~취소선(tilde)~~
 ```
+
 *이탤릭체(single asterisks)*<br>
 _이탤릭체(single underscores)_<br>
 **볼드체(double asterisks)**<br>
@@ -78,15 +79,16 @@ __볼드체(double underscores)__<br>
 ~~취소선(tilde)~~
 
 <br>
+
 ### 목록(List)
 ---
 ##### 순서있는 목록
 ```
-    1. List1
-    2. List2
-    3. List3
-        1. List3-1
-        2. List3-2
+1. List1
+2. List2
+3. List3
+    1. List3-1
+    2. List3-2
 ```
 1. List1
 2. List2
@@ -97,11 +99,11 @@ __볼드체(double underscores)__<br>
 
 ##### 순서없는 목록
 ```
+* List
+* List
+* List
     * List
     * List
-    * List
-        * List
-        * List
 ```
 * List
 * List
@@ -110,23 +112,25 @@ __볼드체(double underscores)__<br>
     * List
     
 <br>
+
 ### 인용(BlockQuote)
 ---
 ```
-    > blockquote1
-    >> blockquote2
-    >>> blockquote3
+> blockquote1
+>> blockquote2
+>>> blockquote3
 ```
 > blockquote1
 >> blockquote2
 >>> blockquote3
 
 <br>
+
 ### 코드(Code)
 ---
 ##### 인라인(inline) 코드
 ```
-    This is `code`
+This is `code`
 ```
 
 This is `code`
@@ -140,19 +144,20 @@ This is `code`
     ```
 ```
 ```swift
-    let foo = "Hello Wordl!"
+let foo = "Hello Wordl!"
 ```
 <br>
+
 ### 링크(Link)
 ---
 ```
-    [1]: https://github.com
+[1]: https://github.com
 
-    [GitHub][1]
+[GitHub][1]
 
-    [Google](https://google.com)
+[Google](https://google.com)
 
-    [Naver](https://naver.com "naver.com")
+[Naver](https://naver.com "naver.com")
 ```
 [1]: https://github.com
 
@@ -164,36 +169,39 @@ This is `code`
 
 
 <br>
+
 ### 이미지(Images)
 ---
 사이즈 조절은 `<img width="" height=""></img>` 사용
 ```
-    ![Alt text](/assets/images/1.jpg)
-    ![Alt text](/assets/images/2.jpg "title")
+![Alt text](/assets/images/1.jpg)
+![Alt text](/assets/images/2.jpg "title")
 ```
 ![Alt text](/assets/images/1.jpg)
 ![Alt text](/assets/images/2.jpg "title")
 
 <br>
+
 ##### 이미지 링크
 ```
-    [![Alt text](/assets/images/3.jpg)](https://github.com/KyungmoSung)
+[![Alt text](/assets/images/3.jpg)](https://github.com/KyungmoSung)
 ```
 [![Alt text](/assets/images/3.jpg)](https://github.com/KyungmoSung)
 
 <br>
+
 ### 표(Table)
 ---
 헤더 셀을 구분할 때 3개 이상의 -(hyphen/dash) 기호가 필요<br>
 헤더 셀을 구분하면서 :(Colons) 기호로 셀(열/칸) 안에 내용을 정렬<br>
 가장 좌측과 가장 우측에 있는 |(vertical bar) 기호는 생략 가능<br>
 ```
-    | A | B | C |
-    |:---|:---:|---:|
-    | `row1` | aaa | `111` |
-    | `row2` | bbb |  |
-    | `row3` | ccc |  |
-    | `row4` | ddd |  |
+| A | B | C |
+|:---|:---:|---:|
+| `row1` | aaa | `111` |
+| `row2` | bbb |  |
+| `row3` | ccc |  |
+| `row4` | ddd |  |
 ```
 
 | A | B | C |
@@ -204,19 +212,21 @@ This is `code`
 | `row4` | ddd |  |
 
 <br>
+
 ### 수평선(Horizontal Rule)
 ---
 각 기호를 3개 이상 입력, 페이지 나누기 용도로 많이 사용
 ```
-    ---
-    ***
-    ___
+---
+***
+___
 ```
 ---
 ***
 ___
 
 <br>
+
 ### 줄바꿈(Line Breaks)
 ---
 띄어쓰기 2번이나 `<br>`사용

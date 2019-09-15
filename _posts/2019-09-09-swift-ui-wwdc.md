@@ -179,7 +179,152 @@ struct ContentView_Previews: PreviewProvider {
 
 ## 네비게이션 추가
 ---
+네이게이션을 추가하기 위해 상위에 `NavigationView`를 추가해주고 `navigationBarTitle`옵션을 추가해 타이틀을 설정해 줍니다.
+```swift
+struct ContentView: View {
+    var countries: [Country] = []
+    var body: some View {
+        NavigationView {
+            List(countries) { country in
+                Image(country.imageName)
+                
+                VStack(alignment: .leading) {
+                    Text(country.korName)
+                    Text(country.engName)
+                        .foregroundColor(.secondary)
+                }
+            }
+            .navigationBarTitle("Country")
+        }
+    }
+}
+```
+## 네비게이션 액션 및 서브뷰 추출(Extract)
+---
+`NavigationLink`를 추가하여 셀 이벤트를 추가합니다 `destination` 파라미터에 이동할 디테일 뷰를 설정해줄수 있습니다.  
+추가로 `cmd`+클릭을 하여 복잡한 뷰를 따로 추출(Extract)하면 더 깔끔하고 재사용가능한 뷰를 만들어낼 수 있습니다. 여기서는 셀을 따로 빼내도록 하겠습니다
+<img src="../assets/images/swift-ui-wwdc/8.png" alt="drawing" width="500"/>
+각 `CountryCell` 셀에 들어갈 데이터를 저장할 `country` 객체를 추가해줍니다.
+```swift
+struct ContentView: View {
+    var countries: [Country] = []
+    var body: some View {
+        NavigationView {
+            List(countries) { country in
+                CountryCell(country: country)
+            }
+        }
+        .navigationBarTitle("Country")
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView(countries: testData)
+    }
+}
+
+struct CountryCell: View {
+    let country: Country
+    var body: some View {
+        NavigationLink(destination: Text(country.korName)) {
+            Image(country.imageName)
+            
+            VStack(alignment: .leading) {
+                Text(country.korName)
+                Text(country.engName)
+                    .foregroundColor(.secondary)
+            }
+        }
+    }
+}
+```
+## 상세뷰 추가
+---
+이제 셀을 선택했을때 이동할 상세 뷰 `CountryDetail`를 추가해줍니다.  
+`country` 객체를 추가해주고 뷰에는 각 나라의 국기 이미지를 보여지도록 해보겠습니다.
+네비게이션에 `push`를 해줄것이기 때문에 상세뷰의 타이틀을 설정해줍니다. `displayMode`는 기본으로 라지타이틀이기 때문에 상세뷰에서는 `inline`옵션을 설정합니다.  
+마지막으로 프리뷰에 네이게이션이 보이도록 `NavigationView`로 감싸주고 프리뷰에 보여질 임의의 테스트 데이터를 넣어줍니다.
+```swift
+struct CountryDetail: View {
+    let country: Country
+    var body: some View {
+        Image(country.imageName)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .navigationBarTitle(Text(country.korName), displayMode: .inline)
+    }
+}
+
+struct CountryDetail_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+          CountryDetail(country: testData[0])
+        }
+    }
+}
+```
+
+<img src="../assets/images/swift-ui-wwdc/9.png" alt="drawing" width="300"/>
+
+## 탭 액션 추가
+---
+국기 이미지에 탭 액션을 추가해 `contentMode`가 탭을 할때마다 변하도록 해보겠습니다.  
+이미지가 줌상태인지 알수있도록 `zoomed` 변수를 추가해주고 앞에 상태값임을 나타내는 `@State`어노테이션을 붙여줍니다.  
+`Image`에 `onTapGesture` 옵션을 추가해 탭을 했을때 어떤 액션을 할지 넣어줍니다. 탭을 할때마다 `zoomed`을 상태를 변경해줄것이기 때문에 `zoomed.toggle()`을 사용했습니다.  
+이제 `aspectRatio contentMode`에 `zoomed`의 상태에 따라 `fill`, `fit`이 바뀌도록 넣어줍니다.
+```swift
+struct CountryDetail: View {
+    let country: Country
+    @State private var zoomed = false
+    
+    var body: some View {
+        Image(country.imageName)
+            .resizable()
+            .aspectRatio(contentMode: zoomed ? .fill : .fit)
+            .navigationBarTitle(Text(country.korName), displayMode: .inline)
+            .onTapGesture { self.zoomed.toggle() }
+    }
+}
+```
+프리뷰 화면 우측하단에 화살표(재생) 버튼을 눌러 실시간으로 어떻게 동작하는지 확인할 수 있습니다. 이미지를 클릭하면 contentMode가 바뀌면서 이미지가 확대,축소 되는것처럼 보일것입니다.
+## 애니메이션
+--- 
+이미지가 확대, 축소될때 자연스럽게 움직이도록 애니메이션을 넣어보도록 하겠습니다.  
+탭 제스쳐에 `withAnimation`을 넣어주면 확대, 축소시 간단하게 애니메이션을 추가해줄 수 있습니다.  
+
+비디오가 있을경우 비디오 아이콘을 보여주고 확대시에 아이콘이 사라졌다가 축소하면 나타나도록 추가해보고 좌측에서 나오도록 `transition`을 적용해봅시다.
+```swift
+struct CountryDetail: View {
+    let country: Country
+    @State private var zoomed = false
+    
+    var body: some View {
+        ZStack(alignment: .topLeading) {
+            Image(country.imageName)
+                .resizable()
+                .aspectRatio(contentMode: zoomed ? .fill : .fit)
+                .navigationBarTitle(Text(country.korName), displayMode: .inline)
+                .onTapGesture {
+                    withAnimation { self.zoomed.toggle() }
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            
+            if country.hasVideo && !zoomed {
+                Image(systemName: "video.fill")
+                    .font(.largeTitle)
+                    .padding(.all)
+                    .transition(.move(edge: .leading))
+            }
+        }
+    }
+}
+```
+상위에 `ZStack` 추가해 비디오 이미지를 국기이미지 위에 올려놓습니다. 이미지 프레임의 max값을 `infinity`로 설정하여 비디오 이미지가 뷰의 상단에 보여지도록 수정해줍니다.  
+비디오 이미지가 크게 보이도록 `largeTitle`로 설정하고 패딩을 주면 더 깔끔하게 보입니다.  
+`transition`에 `move`옵션을 설정하고 왼쪽에서 나오도록 `leading`으로 설정합니다.
 
 ### 참고자료
+---
 >[https://developer.apple.com/kr/xcode/swiftui/](https://developer.apple.com/kr/xcode/swiftui/)
 >[https://developer.apple.com/videos/play/wwdc2019/204/](https://developer.apple.com/videos/play/wwdc2019/204/)<br>
