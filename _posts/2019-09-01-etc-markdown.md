@@ -4,7 +4,7 @@ title:  "[Markdown] 마크다운이란 무엇인가? 마크다운 문법 작성 
 author: sung
 categories: [ etc ]
 tags: [ markdown, md, html, readme, blog ]
-image: assets/images/190901_markdown.png
+image: assets/images/title_markdown.jpg
 comments: true
 ---
 
