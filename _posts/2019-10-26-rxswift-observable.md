@@ -2,7 +2,7 @@
 layout: post
 title:  "[RxSwift] Observable"
 author: sung
-categories: [ swift ]
+categories: [ rxswift ]
 tags: [swift, rxswift, Observable]
 image: 
 comments: true
@@ -105,3 +105,9 @@ Observable.from([1, 2, 3])
     }
     .disposed(by:disposeBag)
 ```
+<br>
+
+## Reference
+--- 
+> [http://reactivex.io/](http://reactivex.io/)  
+> [https://kxcoding.com/]( https://kxcoding.com/)
