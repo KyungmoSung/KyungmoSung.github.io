@@ -1,11 +1,12 @@
 ---
 layout: post
 title:  "[RxSwift] Observable"
-author: sung
-categories: [ rxswift ]
+author: Sung Kyungmo
+catalog: true
 tags: [swift, rxswift, Observable]
-image: 
 comments: true
+header-img:   "img/title-bg/rxswift.jpg"
+header-mask:  0.6
 ---
 # Observable
 Observable은 Observable Sequence, Sequence라고 부르기도 한다.

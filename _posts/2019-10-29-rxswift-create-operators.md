@@ -1,11 +1,12 @@
 ---
 layout: post
 title:  "[RxSwift] Create Operators"
-author: sung
-categories: [ rxswift ]
+author: Sung Kyungmo
+catalog: true
 tags: [swift, rxswift, Operators]
-image: 
 comments: true
+header-img:   "img/title-bg/rxswift.jpg"
+header-mask:  0.6
 ---
 ## 생성 연산자
 

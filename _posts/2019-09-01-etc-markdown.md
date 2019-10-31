@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "[Markdown] 마크다운이란 무엇인가? 마크다운 문법 작성 방법"
-author: sung
-categories: [ etc ]
+author: Sung Kyungmo
+catalog: true
 tags: [ markdown, md, html, readme, blog ]
 comments: true
 ---
