@@ -4,7 +4,7 @@ title:  "[WWDC2019] SwiftUI 소개: 첫번째 앱 만들기"
 author: sung
 categories: [ swift ]
 tags: [swift, swiftui, wwdc, wwdc2019]
-image: assets/images/swift-ui-wwdc/swiftui_title.png
+image: img/swift-ui-wwdc/swiftui_title.png
 comments: true
 ---
 지난 WWDC 2019에서 SwiftUI가 발표되었습니다.
@@ -24,7 +24,7 @@ SwiftUI는 Swift의 성능을 바탕으로 모든 Apple 플랫폼에서 사용�
 새로운 프로젝트를 만들어보겠습니다. 아래 이미지와 같이 User Interface를 보면 새롭게 추가된 SwiftUI가 보입니다. 선택하고 프로젝트 생성!
 > 주의! Product Name을 SwiftUI로 만들게 되면 프로젝트명과 SwiftUI 프레임워크와 충돌이 일어나 제대로 import를 못해 에러가 일어납니다.
 
-![](../assets/images/swift-ui-wwdc/1.png)
+![](/img/swift-ui-wwdc/1.png)
 
 프로젝트를 생성하면 바로 ContentView.swift 가 열리고 오른쪽에는 정체를 알수없는 프리뷰 화면도 보입니다.   
 우측 상단에 Resume버튼을 누르면 신기한 일이 일어납니다!  
@@ -57,7 +57,7 @@ struct ContentView_Previews: PreviewProvider {
 Cmd키를 누른상태에서 `Text()`를 선택하면 아래와 같은 메뉴들이 나타납니다.  
 Embed in HStack을 선택하면 Text가 Stack안으로 들어가게 됩니다.
 
-![](../assets/images/swift-ui-wwdc/2.png)
+![](/img/swift-ui-wwdc/2.png)
 
 `HStack`안에 `Image`와 `VStack`을 넣어서  좌측에는 이미지 우측에는 2줄의 텍스트를 만들어보겠습니다.
 
@@ -75,7 +75,7 @@ struct ContentView: View {
 }
 ```
 
-<img src="../assets/images/swift-ui-wwdc/3.png" alt="drawing" width="200"/>  
+<img src="/img/swift-ui-wwdc/3.png" alt="drawing" width="200"/>  
 
 이미지를 넣었는데 텍스트에 비해 이미지가 너무 크네요.. 이미지 사이즈를 변경하려면 `resizable()` 옵션을 주고 `contentMode`, `frame`을 변경해주면 됩니다.
 
@@ -97,7 +97,7 @@ struct ContentView: View {
     }
 }
 ```
-<img src="../assets/images/swift-ui-wwdc/4.png" alt="drawing" width="200"/>  
+<img src="/img/swift-ui-wwdc/4.png" alt="drawing" width="200"/>  
 
 이미지 사이즈를 변경하고 VStack에 alignment와 텍스트의 Color를 설정했습니다.
 
@@ -105,7 +105,7 @@ struct ContentView: View {
 ---
 이제 `TableView`처럼 리스트 형태를 만들어보겟습니다.
 좀전에 만들었던 `HStack`을 Cmd클릭한후 메뉴에서 `Embed in List` 선택해주면 간단하게 리스트 형태가 만들어지게 됩니다.
-![](../assets/images/swift-ui-wwdc/5.png)
+![](/img/swift-ui-wwdc/5.png)
 ```swift
 struct ContentView: View {
     var body: some View {
@@ -124,7 +124,7 @@ struct ContentView: View {
     }
 }
 ```
-<img src="../assets/images/swift-ui-wwdc/6.png" alt="drawing" width="300"/>
+<img src="/img/swift-ui-wwdc/6.png" alt="drawing" width="300"/>
 
 ## List에 데이터 적용
 ---
@@ -176,7 +176,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 ```
-<img src="../assets/images/swift-ui-wwdc/7.png" alt="drawing" width="300"/>
+<img src="/img/swift-ui-wwdc/7.png" alt="drawing" width="300"/>
 
 ## 네비게이션 추가
 ---
@@ -204,7 +204,7 @@ struct ContentView: View {
 ---
 `NavigationLink`를 추가하여 셀 이벤트를 추가합니다 `destination` 파라미터에 이동할 디테일 뷰를 설정해줄수 있습니다.  
 추가로 `cmd`+클릭을 하여 복잡한 뷰를 따로 추출(Extract)하면 더 깔끔하고 재사용가능한 뷰를 만들어낼 수 있습니다. 여기서는 셀을 따로 빼내도록 하겠습니다
-<img src="../assets/images/swift-ui-wwdc/8.png" alt="drawing" width="500"/>
+<img src="/img/swift-ui-wwdc/8.png" alt="drawing" width="500"/>
 각 `CountryCell` 셀에 들어갈 데이터를 저장할 `country` 객체를 추가해줍니다.
 ```swift
 struct ContentView: View {
@@ -266,7 +266,7 @@ struct CountryDetail_Previews: PreviewProvider {
 }
 ```
 
-<img src="../assets/images/swift-ui-wwdc/9.png" alt="drawing" width="300"/>
+<img src="/img/swift-ui-wwdc/9.png" alt="drawing" width="300"/>
 
 ## 탭 액션 추가
 ---

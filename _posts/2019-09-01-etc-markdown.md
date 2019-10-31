@@ -4,7 +4,6 @@ title:  "[Markdown] 마크다운이란 무엇인가? 마크다운 문법 작성 
 author: sung
 categories: [ etc ]
 tags: [ markdown, md, html, readme, blog ]
-image: assets/images/title_markdown.jpg
 comments: true
 ---
 
@@ -174,19 +173,19 @@ let foo = "Hello Wordl!"
 ---
 사이즈 조절은 `<img width="" height=""></img>` 사용
 ```
-![Alt text](/assets/images/1.jpg)
-![Alt text](/assets/images/2.jpg "title")
+![Alt text](/img/markdown/1.jpg)
+![Alt text](/img/markdown/2.jpg "title")
 ```
-![Alt text](/assets/images/1.jpg)
-![Alt text](/assets/images/2.jpg "title")
+![Alt text](/img/markdown/1.jpg)
+![Alt text](/img/markdown/2.jpg "title")
 
 <br>
 
 ##### 이미지 링크
 ```
-[![Alt text](/assets/images/3.jpg)](https://github.com/KyungmoSung)
+[![Alt text](/img/markdown/3.jpg)](https://github.com/KyungmoSung)
 ```
-[![Alt text](/assets/images/3.jpg)](https://github.com/KyungmoSung)
+[![Alt text](/img/markdown/3.jpg)](https://github.com/KyungmoSung)
 
 <br>
 
