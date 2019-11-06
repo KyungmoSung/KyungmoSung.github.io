@@ -3,7 +3,7 @@ layout: post
 title:  "[WWDC2019] SwiftUI 소개: 첫번째 앱 만들기"
 author: Sung Kyungmo
 catalog: true
-tags: [swift, swiftui, wwdc, wwdc2019]
+tags: [ios, swift, swiftui, wwdc, wwdc2019]
 comments: true
 ---
 지난 WWDC 2019에서 SwiftUI가 발표되었습니다.

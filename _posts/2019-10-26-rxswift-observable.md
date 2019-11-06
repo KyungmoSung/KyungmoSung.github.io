@@ -3,7 +3,7 @@ layout: post
 title:  "[RxSwift] Observable"
 author: Sung Kyungmo
 catalog: true
-tags: [swift, rxswift, Observable]
+tags: [ios, swift, rxswift, observable]
 comments: true
 header-img:   "img/title-bg/rxswift.jpg"
 header-mask:  0.6

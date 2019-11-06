@@ -3,7 +3,7 @@ layout: post
 title:  "[RxSwift] Create Operators"
 author: Sung Kyungmo
 catalog: true
-tags: [swift, rxswift, Operators]
+tags: [ios, swift, rxswift, operators]
 comments: true
 header-img:   "img/title-bg/rxswift.jpg"
 header-mask:  0.6
