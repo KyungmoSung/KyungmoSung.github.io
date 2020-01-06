@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[iOS] Xcode11 더 간편해진 UIScrollView 만들기"
+title:  "[iOS] Xcode11 새로워진 UIScrollView 만들기"
 subtitle: "contentLayoutGuide, frameLayoutGuide 를 이용한 스크롤뷰 레이아웃 구성"
 author: Sung Kyungmo
 catalog: true
