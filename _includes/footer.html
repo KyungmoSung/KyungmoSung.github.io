@@ -204,11 +204,11 @@
     // Changes at v1.8.1: include lang flag as a url query. This interop well with catalog hash anchors.
     function getLang() { return new URLSearchParams(document.location.search).get("lang") }
 
-    function setLang(newLang) {
-        var params = new URLSearchParams(document.location.search)
-        params.set("lang", newLang)
-        document.location.search = params.toString()  // refresh.
-    }
+<!--    function setLang(newLang) {-->
+<!--        var params = new URLSearchParams(document.location.search)-->
+<!--        params.set("lang", newLang)-->
+<!--        document.location.search = params.toString()  // refresh.-->
+<!--    }-->
 
     // handle render
     function _render(){
@@ -232,15 +232,15 @@
         if ("{{ page.catalog }}") generateCatalog(".catalog-body");
     }
 
-    // handle select change
-    function onLanChange(index){
-        if(index == 0){
-            lang = "zh"
-        }else{
-            lang = "en"
-        }
-        setLang(lang)
-    }
+<!--    // handle select change-->
+<!--    function onLanChange(index){-->
+<!--        if(index == 0){-->
+<!--            lang = "zh"-->
+<!--        }else{-->
+<!--            lang = "en"-->
+<!--        }-->
+<!--        setLang(lang)-->
+<!--    }-->
 
     // init
     _render();
