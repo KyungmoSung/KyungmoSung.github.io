@@ -3,7 +3,7 @@ layout: post
 title:  "[RxSwift] Scheduler"
 author: Sung Kyungmo
 catalog: true
-tags: [ios, swift, rxswift, scheduler]
+tags: [ios, swift, rxswift, scheduler, operator]
 comments: true
 header-img:   "img/title-bg/rxswift.jpg"
 header-mask:  0.6
