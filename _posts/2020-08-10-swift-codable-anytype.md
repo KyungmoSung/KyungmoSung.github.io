@@ -3,7 +3,7 @@ layout: post
 title:  "[Swift] JSON Codable: Any Type Custom"
 author: Sung Kyungmo
 catalog: true
-tags: [ios, swift, codable, any]
+tags: [ios, swift, codable, any, alamofire, json, unknown, model]
 comments: true
 ---
 
