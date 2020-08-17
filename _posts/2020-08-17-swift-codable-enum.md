@@ -26,9 +26,9 @@ Json 데이터의 값이 특정한(규칙적인) 형태라면 열거형인 `Enum
 
 ```swift
 struct Car: Codable {
-	var id: Int?
-	var name: String?
-	var fuelType: String?
+    var id: Int?
+    var name: String?
+    var fuelType: String?
 }
 ```
 
@@ -59,11 +59,11 @@ enum FuelType: String, Codable {
     case diesel    = "D" // 디젤
     case lpg       = "L" // LPG
     case battery   = "B" // 전기
-	case unknown
+    case unknown
 }
 
 public init(from decoder: Decoder) throws {
-	self = try FuelType(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .unknown
+    self = try FuelType(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .unknown
 }
 ```
 
@@ -71,8 +71,8 @@ public init(from decoder: Decoder) throws {
 
 ```swift
 struct Car: Codable {
-	var id: Int?
-	var name: String?
-	var fuelType: FuelType?
+    var id: Int?
+    var name: String?
+    var fuelType: FuelType?
 }
 ```
